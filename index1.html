@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amarante&family=Antonio:wght@500&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Marcellus&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Sans+Elbasan&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand&family=Smooch+Sans:wght@100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: #222222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            flex-wrap: wrap;
+            font-family: "Amarante", serif;
+            font-weight: 400;
+            font-style: normal;
+
+            >#frame {
+                width: 90%;
+                height: 80vh;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                /* gap: 20px; */
+                overflow: hidden;
+
+                >div {
+                    flex-basis: 2%;
+                    flex-grow: 1;
+                    height: 100%;
+                    transition: 1s;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    position: relative;
+
+                    &:first-of-type>h2 {
+                        left: 470px;
+                    }
+
+                    >img {
+                        width: 100%;
+                        height: 97%;
+                        object-fit: cover;
+                        transition: 1s;
+
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                    }
+
+                    >h2 {
+                        text-transform: uppercase;
+                        position: absolute;
+                        top: 20%;
+                        left: 580px;
+                        opacity: 0;
+                        transition: 0.4s;
+                        font-size: 30px;
+                    }
+
+                    >ul {
+                        width: 30%;
+                        position: absolute;
+                        top: 27%;
+                        left: 620px;
+                        opacity: 0;
+                        transition: 0.4s;
+
+                        >li {
+                            list-style-type: none;
+                            text-transform: capitalize;
+                            font-size: 25px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            margin-bottom: 20px;
+                            transition: 1s;
+
+                            >span {
+                                font-size: 10px;
+                                display: block;
+                                width: 100%;
+                            }
+
+                            &:hover {
+                                color: gray;
+                            }
+                        }
+                    }
+
+                    >span {
+                        width: 100%;
+                        display: block;
+                        text-align: center;
+                        text-transform: uppercase;
+                        font-size: 20px;
+                        opacity: 0;
+                        transition: 1s;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            #menu {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: -100px;
+
+                >li {
+                    list-style-type: none;
+                    width: 20%;
+                    text-align: center;
+                    text-transform: uppercase;
+                    line-height: 40px;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        display: flex;
+                        width: 60%;
+                        height: 1px;
+                        background-color: white;
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+        }
+
+        .filter {
+            filter: grayscale(100%);
+        }
+
+        /* footer */
+        .animated-footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            animation: fadeInUp 1s ease forwards;
+            /* border-radius: 64% 36% 70% 30% / 54% 66% 34% 46%; */
+            border-radius: 70% 30% 47% 53% / 66% 67% 33% 34%  ;
+            transition: 1s;
+            transform-origin: right bottom;
+
+            >.footer-img {
+                width: 130px;
+                border-radius: 50%;
+                margin-bottom: 10px;
+                opacity: 0;
+                animation: fadeIn 1.5s ease-out forwards;
+                animation-delay: 0.5s;
+            }
+            >.footer-socials {
+                margin-top: 15px;
+                    >.social-icon {
+                    display: inline-block;
+                    margin: 0 15px;
+                    text-decoration: none;
+                    color: #fff;
+                    font-weight: bold;
+                    transition: transform 0.3s ease, color 0.3s ease;
+                    font-size: 14px;
+                    &:hover{
+                        transform: scale(1.3);
+                        color: #96bcbc;
+                    }
+                }
+            }
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .scale{
+            scale: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="frame">
+        <div>
+            <img src="asset/img/IMG_6722.JPG" alt="">
+            <h2>consequat</h2>
+            <ul>
+                <li>pariatur
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>et
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>magna
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>sint
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>occaecat
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+            </ul>
+            <span>back</span>
+        </div>
+        <div>
+            <img src="asset/img/GKLZ5693.JPG" alt="">
+            <h2>non</h2>
+            <ul>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+            </ul>
+            <span>back</span>
+        </div>
+        <div>
+            <img src="asset/img/IBIY8082.JPG" alt="">
+            <h2>non</h2>
+            <ul>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+            </ul>
+            <span>back</span>
+        </div>
+        <div>
+            <img src="asset/img/IMG_0844.JPG" alt="">
+            <h2>velit</h2>
+            <ul>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+            </ul>
+            <span>back</span>
+        </div>
+        <div>
+            <img src="asset/img/IMG_0927.JPG" alt="">
+            <h2>non</h2>
+            <ul>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+                <li>submenu
+                    <span>Lorem, ipsum dolor.</span>
+                </li>
+            </ul>
+            <span>back</span>
+        </div>
+    </div>
+    <ul id="menu">
+        <li>consequat</li>
+        <li>non</li>
+        <li>non</li>
+        <li>velit</li>
+        <li>non</li>
+    </ul>
+    <!-- footre -->
+
+    <footer class="animated-footer">
+        <img src="asset/img/IMG_8049 (2).PNG" alt="Your Name" class="footer-img">
+        <p>Crafted by <strong>hani</strong></p>
+        <div class="footer-socials">
+            <a  target="_blank" href="https://github.com/haniehtahmaseb" class="social-icon">GitHub</a>
+            <a  target="_blank" href="https://www.linkedin.com/in/hani-tahmaseb-a52212212" class="social-icon">LinkedIn</a>
+            <a  target="_blank" href="https://www.instagram.com/htahmaseb_dev" class="social-icon">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- footre -->
+</body>
+<script>
+    const frame = document.querySelector('#frame')
+    const div = document.querySelectorAll('#frame>div')
+    const li = document.querySelectorAll('#menu>li')
+    const back = document.querySelectorAll('#frame>div>span')
+    const foot = document.getElementsByClassName('animated-footer')
+
+    li.forEach((val, i) => {
+        val.setAttribute('data-status', 'off')
+        val.addEventListener('click', () => {
+            // reset
+            div.forEach((item, index) => {
+                if (index != i) {
+                    item.style.flexGrow = '1'
+                    item.children[1].style.opacity = '0'
+                    item.children[2].style.opacity = '0'
+                    item.children[3].style.opacity = '0'
+                    item.parentElement.nextElementSibling.children[index].dataset.status = 'off'
+                    item.children[0].style.width = '100%'
+                }
+            })
+            // reset
+            if (val.getAttribute('data-status') == 'off') {
+                div[i].style.flexGrow = '5'
+                div[i].children[0].style.width = '60%'
+                div[i].children[1].style.opacity = '1'
+                div[i].children[2].style.opacity = '1'
+                div[i].children[3].style.opacity = '1'
+                val.dataset.status = 'on'
+                div[i].children[0].classList.remove('filter')
+            } else {
+                div[i].style.flexGrow = '1'
+                div[i].children[0].style.width = '100%'
+                div[i].children[1].style.opacity = '0'
+                div[i].children[2].style.opacity = '0'
+                div[i].children[3].style.opacity = '0'
+                val.dataset.status = 'off'
+            }
+        })
+    })
+
+    back.forEach((val, i) => {
+        val.addEventListener('click', () => {
+            val.parentElement.style.flexGrow = '1'
+            val.previousElementSibling.previousElementSibling.previousElementSibling.style.width = '100%'
+            val.parentElement.children[1].style.opacity = '0'
+            val.parentElement.children[2].style.opacity = '0'
+            val.parentElement.children[3].style.opacity = '0'
+            val.parentElement.parentElement.nextElementSibling.children[i].dataset.status = 'off'
+        })
+    })
+    foot[0].addEventListener('click' , ()=>{
+        foot[0].classList.toggle('scale')
+    })
+</script>
+
+</html>
